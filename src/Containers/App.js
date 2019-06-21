@@ -16,7 +16,7 @@ class App extends Component {
     }
   }
 
-  onloadfetch = () => {
+  componentDidMount() {
     fetch('https://git.heroku.com/arcane-brook-61004.git/family')
       .then(Response => {
         if (!Response.ok) {
@@ -34,7 +34,7 @@ class App extends Component {
 
   onfamilyclick = (route) => {
     this.setState({ route: route });
-    this.onloadfetch(route);
+    this.componentDidMount();
   }
   onSearchChange = (event) => {
     this.setState({ searchfield: event.target.value })
@@ -45,7 +45,7 @@ class App extends Component {
     })
     return (
       <div >
-        <Nav onfamilyclick={this.onfamilyclick} onloadfetch={this.onloadfetch} />
+        <Nav onfamilyclick={this.onfamilyclick} />
         {
           this.state.route === "home" ?
             (<About />) :

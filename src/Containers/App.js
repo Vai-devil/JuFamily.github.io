@@ -28,6 +28,7 @@ class App extends Component {
 
   onfamilyclick = (route) => {
     this.setState({ route: route });
+    console.log(this.state);
   }
   onSearchChange = (event) => {
     this.setState({ searchfield: event.target.value })

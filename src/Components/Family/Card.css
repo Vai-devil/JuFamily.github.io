@@ -1,0 +1,170 @@
+:root{
+    --sea-blue : #056E89;
+    --zomp : #469C94;
+    --zomplight :  rgba(19, 140, 170, 0.698);
+    --shinygreen:#5FB780;
+    --mediumspringbud:#B5F685;
+    --verypaleyellow:#ffffc5;
+    --textcolor:rgb(42, 5, 5);
+    --catawba : #773344;
+    --teracotta : #E85F5C;
+    --pastle-pink:#e3b5a4;
+    --indian-yellow:#E0A458;
+}
+.card
+{
+    opacity: 80%;
+    background: rgba(255, 255, 255, 0.787);
+    text-align: center;
+    margin:10px;
+    box-shadow: 0px 0px 5px rgba(133, 130, 130, 0.623);
+    transition: all 250ms ease;
+    width: 220px;
+}
+.card:hover{
+    transform: scale(1.1);
+
+}
+
+
+.card:hover .card-text h1{
+    background: rgb(49, 145, 235);
+    font-weight: 400;
+    
+}
+.card:hover .linklogo
+{
+    background:rgba(246, 245, 245, 0.507);
+}
+
+.card:hover:nth-child(3n+1) .card-img{
+    background: rgb(103, 173, 238);
+}
+
+.card:nth-child(3n + 1 ):hover .card-text h1{
+    background: rgb(49, 145, 235);
+    font-weight: 400;
+}
+.card:hover:nth-child(3n  ) .card-img{
+    background: rgb(230, 178, 111);
+    }
+.card:nth-child(3n  ):hover .card-text h1{
+        background: rgb(224, 159, 73);
+        font-weight: 400;
+    }
+.card:hover:nth-child(3n + 2 ) .card-img{
+        background: rgb(90, 209, 96);
+}
+.card:nth-child(3n + 2 ):hover .card-text h1{
+            background: rgb(63, 197, 69);
+            font-weight: 400;
+}
+.card:nth-child(3n + 1 ) .card-img img{
+    padding:0;
+    margin-top: 20px;
+    margin-bottom:10px;  
+    border: 5px solid var(--catawba);
+    border-radius: 50%;
+    transition: all 250ms ease;
+}
+.card:nth-child(3n+2) .card-img img{
+    padding:0;
+    margin-top: 20px;
+    margin-bottom:10px;  
+    border: 5px solid var(--teracotta);
+    border-radius: 50%;
+    transition: all 250ms ease;
+}
+.card:nth-child(3n) .card-img img{
+    padding:0;
+    margin-top: 20px;
+    margin-bottom:10px;  
+    border: 5px solid var(--shinygreen);
+    border-radius: 50%;
+    transition: all 250ms ease;
+}
+
+.card:hover:nth-child(3n )  .card-img img{
+    border: 5px solid rgb(231, 233, 107);
+    background: white;
+}
+
+.card:hover:nth-child(3n + 2 )  .card-img img{
+    border: 5px solid var(--pastle-pink);
+    background: white;
+}
+
+.card:hover:nth-child(3n + 1 )  .card-img img{
+    border: 5px solid var(--indian-yellow);
+    background: white;
+}
+.cardcontainer
+{
+    padding: 20px 50px;
+    display: flex;
+    flex-basis: 32%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card-text{
+    font-family: 'Josefin Sans', sans-serif;
+    margin:0;
+}
+.card-text h1{
+    color : #232323;
+    font-size: 1.3em; 
+    margin:0px;
+    padding:10px;
+    font-weight: 300;
+    transition: all 250ms ease;
+
+}
+
+.card-img
+{
+    min-height: 144px;
+    min-width: 200px;
+    transition: all 250ms ease;
+}
+.card-text p{
+    margin : 20px; 
+    color : #232323;
+    font-size: 0.75em;
+    transition: all 250ms ease;
+}
+
+.hide{
+    display: none;
+}
+.show
+{
+    display: block;
+}
+.linklogo{
+padding: 10px 5px ;
+font-size: 1.5em;
+font-weight: bold;
+transition: all 250ms ease;
+min-height: 50px;
+}
+.linklogo a{
+    text-decoration: none; 
+    color: #232323;
+}
+.linklogo p {
+    position: relative;
+    margin :0;
+    padding: 5px 10px;
+    border: 2px solid #232323;
+    border-radius: 50%;
+    display: inline-block;
+    background: #fff;
+}
+.linklogo span{
+    display: block;
+}
+.linklogo p:hover{
+    background: #232323;
+    color:white;
+}

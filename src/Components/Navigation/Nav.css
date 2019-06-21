@@ -1,0 +1,62 @@
+:root{
+    --sea-blue : #056E89;
+    --zomp : #469C94;
+    --zomplight :  rgba(19, 140, 170, 0.698);
+    --shinygreen:#5FB780;
+    --mediumspringbud:#B5F685;
+    --verypaleyellow:#f6f6b2;
+    --text-color:rgb(231, 219, 219);
+    --catawba : #773344;
+    --teracotta : #E85F5C;
+    --pastle-pink:#e3b5a4;
+    --indian-yellow:#E0A458;
+}
+
+.Navbar{
+    position: relative;
+    background: rgb(10, 8, 36);
+    width: 100%;
+    box-shadow: 0px 2px 5px rgb(0, 0, 0)
+}
+.Navbar ul{
+    align-self:center;
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+}
+
+.Navbar li{
+    
+    margin-right:10px;
+    padding: 10px;
+    transition: all 250ms ease-in-out;
+}
+.Navbar p{
+color: var(--text-color);
+padding: 10px;
+font-family: 'Josefin Sans', sans-serif;
+font-weight: 600;
+}
+.Navbar li:hover{
+transform: scale(1.1);
+}
+
+.Navbar li::after{
+    content: "";
+    position: absolute;
+    width: 80%;
+    transform: scaleX(0);
+    height: 2px;
+    background: var(--verypaleyellow);
+    transition: all 200ms linear;
+}
+
+.Navbar li:hover::after{
+    transform: scaleX(1);
+}
+.Navbar li p:hover{
+    cursor: pointer;
+    color: var(--verypaleyellow);
+}
+
+

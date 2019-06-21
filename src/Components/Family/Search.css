@@ -1,0 +1,28 @@
+:root{
+    --sea-blue : #056E89;
+    --zomp : #469C94;
+    --zomplight :  rgba(19, 140, 170, 0.698);
+    --shinygreen:#5FB780;
+    --mediumspringbud:#B5F685;
+    --verypaleyellow:#ffffc5;
+    --textcolor:rgb(42, 5, 5);
+    --catawba : #773344;
+}
+
+.search{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background: var(--zomplight);
+}
+
+.search input{
+    padding: 5px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.876);
+    border: 2px solid var(--sea-blue);
+    color : var(--catawba);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.1em;
+
+}

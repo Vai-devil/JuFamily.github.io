@@ -1,0 +1,48 @@
+.addform{
+    width: 100%;
+    position: relative;
+    margin: 0 auto; 
+    font-family: 'Josefin Sans', sans-serif;  
+}
+.formpage{
+    width: 80%;
+    position: relative;
+    margin: 0 auto;   
+    display: flex;
+    justify-content: center;
+}
+
+table{
+    line-height: 1.5em;
+    position: relative;
+    width: 90%;
+    margin:0 auto;
+    padding: 30px;
+    
+}
+
+.textfields{
+    border: none;
+    border-bottom: 1px solid rgba(39, 39, 39, 0.822);
+    padding:10px;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.308)
+}
+.submitbutton{
+    margin-top:10px;
+color: #fff;
+padding: 10px;
+background: rgba(39, 39, 39, 0.822);
+border: none;
+cursor: pointer;
+}
+
+.radiobtn{
+    padding: 10px;
+}
+
+.textfields:focus
+{
+    background: #7777774f;
+    border:none
+}

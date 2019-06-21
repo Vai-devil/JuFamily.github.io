@@ -16,25 +16,18 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-    fetch('https://git.heroku.com/arcane-brook-61004.git/family')
-      .then(Response => {
-        if (!Response.ok) {
-          throw Response;
-        }
-        return Response.json()
-      }).then(data => {
+  onloadfetch = () => {
+    fetch('https://git.heroku.com/arcane-brook-61004.git/family').then(Response => { Response.text() })
+      .then(data => {
         this.setState({ memlist: JSON.parse(data) });
         return (console.log("hello"));
-      }).catch(err => {
-        console.log(err);
       });
 
   }
 
   onfamilyclick = (route) => {
     this.setState({ route: route });
-    this.componentDidMount();
+    this.onloadfetch(route);
   }
   onSearchChange = (event) => {
     this.setState({ searchfield: event.target.value })
@@ -45,7 +38,7 @@ class App extends Component {
     })
     return (
       <div >
-        <Nav onfamilyclick={this.onfamilyclick} />
+        <Nav onfamilyclick={this.onfamilyclick} onloadfetch={this.onloadfetch} />
         {
           this.state.route === "home" ?
             (<About />) :

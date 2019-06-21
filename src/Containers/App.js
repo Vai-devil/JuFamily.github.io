@@ -19,7 +19,10 @@ class App extends Component {
   onloadfetch = () => {
     fetch('https://git.heroku.com/arcane-brook-61004.git/family', {
       method: 'get',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "*"
+      },
     }).then(Response => { return Response.text() })
       .then(data => {
 

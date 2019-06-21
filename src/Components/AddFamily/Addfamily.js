@@ -39,7 +39,11 @@ class Addform extends React.Component {
         if (this.validate() === true) {
             fetch('https://git.heroku.com/arcane-brook-61004.git/add-family', {
                 method: 'post',
-                headers: { 'Content-Type': 'application/json' },
+
+                headers: {
+                    'Content-Type': 'application/json',
+                    "Access-Control-Allow-Origin": "*"
+                },
                 body: JSON.stringify({
                     email: this.state.email,
                     name: this.state.name,

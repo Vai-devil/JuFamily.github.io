@@ -6,8 +6,8 @@ const Nav = ({ onfamilyclick, onloadfetch }) => {
     return (
         <div className="Navbar">
             <ul>
-                <li><p onClick={() => onfamilyclick('home') && onloadfetch()}>Home</p></li>
-                <li><p onClick={() => onfamilyclick('family') && onfetc}>Family</p></li>
+                <li><p onClick={() => onfamilyclick('home')}>Home</p></li>
+                <li><p onClick={() => onfamilyclick('family') && onloadfetch()}>Family</p></li>
                 <li><p onClick={() => onfamilyclick('add-family')}>Join Family</p></li>
             </ul>
         </div>

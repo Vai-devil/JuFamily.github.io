@@ -16,7 +16,8 @@ class App extends Component {
     }
   }
 
-  onloadfetch = () => {
+  onloadfetch = (event) => {
+
     fetch('https://git.heroku.com/arcane-brook-61004.git/family').then(Response => { Response.text() })
       .then(data => {
         this.setState({ memlist: JSON.parse(data) });
@@ -27,7 +28,6 @@ class App extends Component {
 
   onfamilyclick = (route) => {
     this.setState({ route: route });
-    this.onloadfetch(route);
   }
   onSearchChange = (event) => {
     this.setState({ searchfield: event.target.value })

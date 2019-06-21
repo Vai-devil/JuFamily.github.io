@@ -17,18 +17,17 @@ class App extends Component {
   }
 
   onloadfetch = () => {
-    fetch('https://git.heroku.com/arcane-brook-61004.git/family', {
-      method: 'get',
-      mode: "cors",
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      },
-    }).then(Response => { return Response.text() })
-      .then(data => {
-
+    fetch('https://git.heroku.com/arcane-brook-61004.git/family')
+      .then(Response => {
+        if (!Response.ok) {
+          throw Response;
+        }
+        return Response.json()
+      }).then(data => {
         this.setState({ memlist: JSON.parse(data) });
         return (console.log("hello"));
+      }).catch(err => {
+        console.log(err);
       });
 
   }

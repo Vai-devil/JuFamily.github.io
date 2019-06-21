@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   onloadfetch = () => {
-    fetch('http://git.heroku.com/arcane-brook-61004.git/family', {
+    fetch('https://git.heroku.com/arcane-brook-61004.git/family', {
       method: 'get',
       headers: { 'Content-Type': 'application/json' },
     }).then(Response => { return Response.text() })

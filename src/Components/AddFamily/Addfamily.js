@@ -37,7 +37,7 @@ class Addform extends React.Component {
 
     onsubmitChange = (event) => {
         if (this.validate() === true) {
-            fetch('http://git.heroku.com/arcane-brook-61004.git/add-family', {
+            fetch('https://git.heroku.com/arcane-brook-61004.git/add-family', {
                 method: 'post',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

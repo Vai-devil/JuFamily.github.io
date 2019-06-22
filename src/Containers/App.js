@@ -22,10 +22,9 @@ class App extends Component {
       headers: {},
     }).then(Response => {
       Response.json()
-    })
-      .then(member => {
-        this.setState({ memlist: member })
-      });
+    }).then(member => {
+      this.setState({ memlist: JSON.parse(member) })
+    });
     console.log(this.state);
   }
 

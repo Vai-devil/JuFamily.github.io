@@ -4,7 +4,7 @@ import './Addfamily.css';
 class Addform extends React.Component {
 
     constructor(props) {
-        super();
+        super(props);
         this.state = {
             name: '',
             email: '',
@@ -36,27 +36,24 @@ class Addform extends React.Component {
     }
 
     onsubmitChange = (event) => {
-        if (this.validate() === true) {
-            fetch('https://arcane-brook-61004.herokuapp.com/add-family', {
-                method: 'post',
-                // mode: "no-cors",
-                headers: {
-                    'Content-Type': 'application/json'
-                    // "Access-Control-Allow-Origin": "*"
-                },
+        console.log(this.state);
+        if (this.validate()) {
+            fetch('https://arcane-brook-61004.herokuapp.com/addfamily', {
+                method: 'POST',
                 body: JSON.stringify({
                     email: this.state.email,
                     name: this.state.name,
                     jobtitle: this.state.jobtitle,
                     linkedin: this.state.linkedin,
                     image: this.state.image
-                })
-            })
-                .then(alert("Added"))
+                }),
+                headers: { 'Content-Type': 'application/json' }
+            }).then(res => res.json())
+                .catch(err => console.log("Error !!!!!", err))
             this.props.onfamilyclick('about');
         }
         else {
-            alert("Please Fill All the fields");
+            console.log("validation failed");
         }
     }
 
@@ -74,34 +71,32 @@ class Addform extends React.Component {
     render() {
         return (
             <div className="addform">
-                <form method="" onSubmit={() => this.onsubmitChange()}>
-                    <table className="table" cellPadding="5px" cellSpacing="10px">
-                        <tbody><tr>
-                            <td width="40%">Name : </td>
-                            <td width="60%"><input onChange={this.onNameChange} className="textfields" type="text" placeholder="Enter Your Name" name="name" maxLength='30' width="100px" required /></td>
+                <table className="table" cellPadding="5px" cellSpacing="10px">
+                    <tbody><tr>
+                        <td width="40%">Name : </td>
+                        <td width="60%"><input onChange={this.onNameChange} className="textfields" type="text" placeholder="Enter Your Name" name="name" maxLength='30' width="100px" required /></td>
+                    </tr>
+                        <tr>
+                            <td>Email : </td>
+                            <td><input onChange={this.onEmailChange} className="textfields" type="email" placeholder="Enter your Email" name="email" required /></td>
                         </tr>
-                            <tr>
-                                <td>Email : </td>
-                                <td><input onChange={this.onEmailChange} className="textfields" type="email" placeholder="Enter your Email" name="email" required /></td>
-                            </tr>
-                            <tr>
-                                <td>Job Title : </td>
-                                <td><input onChange={this.onJobtitleChange} className="textfields" type="text" placeholder="Enter Your Job Title (Student/Dev/etc)" name="linkedin" defaultValue="" required /></td>
-                            </tr>
-                            <tr>
-                                <td>Linked-in URL : </td>
-                                <td><input onChange={this.onLinkedinChange} className="textfields" type="url" placeholder="Enter your URl" name="linkedin" /></td>
-                            </tr>
-                            <tr>
-                                <td>Image : </td>
-                                <td><input onChange={this.onimageChange} className="textfields" type="url" placeholder="Enter URL For your Image" name="image" defaultValue="" /></td>
-                            </tr>
-                            <tr align="center">
-                                <td colSpan="2"><input type="Submit" className="submitbutton" defaultValue="Submit" /></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </form>
+                        <tr>
+                            <td>Job Title : </td>
+                            <td><input onChange={this.onJobtitleChange} className="textfields" type="text" placeholder="Enter Your Job Title (Student/Dev/etc)" name="linkedin" defaultValue="" required /></td>
+                        </tr>
+                        <tr>
+                            <td>Linked-in URL : </td>
+                            <td><input onChange={this.onLinkedinChange} className="textfields" type="url" placeholder="Enter your URl" name="linkedin" /></td>
+                        </tr>
+                        <tr>
+                            <td>Image : </td>
+                            <td><input onChange={this.onimageChange} className="textfields" type="url" placeholder="Enter URL For your Image" name="image" defaultValue="" /></td>
+                        </tr>
+                        <tr align="center">
+                            <td colSpan="2"><input onClick={this.onsubmitChange} type="Submit" className="submitbutton" defaultValue="Submit" /></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div >
         );
     }

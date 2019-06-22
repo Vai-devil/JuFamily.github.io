@@ -25,13 +25,14 @@ class App extends Component {
       console.log(Response);
     })
       .then(data => {
-        // this.setState({ memlist: JSON.parse(data) });
+        this.setState({ memlist: JSON.parse(data) });
         return (console.log(this.state));
       })
   }
 
   onfamilyclick = (route) => {
     this.setState({ route: route });
+    this.onloadfetch();
   }
   onSearchChange = (event) => {
     this.setState({ searchfield: event.target.value })

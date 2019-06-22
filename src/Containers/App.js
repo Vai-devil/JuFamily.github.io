@@ -22,6 +22,7 @@ class App extends Component {
       headers: {},
     }).then(Response => {
       Response.json()
+      console.log(Response.json());
     }).then(value => console.log(value));
   }
 

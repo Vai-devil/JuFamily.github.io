@@ -19,10 +19,10 @@ class App extends Component {
   onloadfetch = () => {
     fetch('https://arcane-brook-61004.herokuapp.com/family', {
       method: 'get',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {},
     }).then(Response => {
       Response.text();
-      console.log(Response);
+      console.log(Response.data());
     })
       .then(data => {
         // this.setState({ memlist: JSON.parse(data) });

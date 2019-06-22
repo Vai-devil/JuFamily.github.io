@@ -21,8 +21,8 @@ class App extends Component {
       method: 'get',
       headers: {},
     }).then(Response => {
-      console.log(Response.json());
-    })
+      Response.json()
+    }).then(value => console.log(value));
   }
 
   onfamilyclick = (route) => {

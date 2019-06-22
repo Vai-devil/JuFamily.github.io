@@ -21,7 +21,8 @@ class App extends Component {
       method: 'get',
       headers: {},
     }).then(Response => {
-      this.setState({ memlist: Response.json() });
+      this.setState({ memlist: JSON.parse(Response.json()) });
+      console.log(this.state);
     })
   }
 

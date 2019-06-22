@@ -21,7 +21,10 @@ class App extends Component {
       method: 'get',
       headers: {},
     }).then(Response => {
-      this.setState({ memlist: Response.json() });
+      this.setState({ memlist: Response.json() })
+        .then(member => {
+          this.setState({ memlist: member })
+        });
       console.log(this.state);
     })
   }
@@ -34,7 +37,9 @@ class App extends Component {
     this.setState({ searchfield: event.target.value })
   }
   render() {
-    var filtered = '';
+    const filtered = this.state.memlist.filter(member => {
+      return member.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
+    })
     return (
       <div >
         <Nav onfamilyclick={this.onfamilyclick} onloadfetch={this.onloadfetch} />

@@ -34,9 +34,7 @@ class App extends Component {
     this.setState({ searchfield: event.target.value })
   }
   render() {
-    const filtered = this.state.memlist.filter(member => {
-      return member.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
-    })
+    const filtered = JSON.parse(this.state.memlist);
     return (
       <div >
         <Nav onfamilyclick={this.onfamilyclick} onloadfetch={this.onloadfetch} />

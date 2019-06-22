@@ -12,7 +12,9 @@ const Family = ({ memlist }) => {
                         name={memlist[i].name}
                         jobtitle={memlist[i].jobtitle}
                         linkedin={memlist[i].linkedin}
-                        image={memlist[i].image} />)
+                        image={memlist[i].image}
+                        email={memlist[i].email}
+                        insta={memlist[i].insta} />)
                 })
             }
 

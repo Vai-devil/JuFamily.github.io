@@ -29,7 +29,8 @@ class App extends Component {
 
   onfamilyclick = (route) => {
     this.setState({ route: route });
-    this.onloadfetch();
+    if (route === 'family') { this.onloadfetch(); }
+
   }
   onSearchChange = (event) => {
     this.setState({ searchfield: event.target.value })

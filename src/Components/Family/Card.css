@@ -147,24 +147,31 @@ font-size: 1.5em;
 font-weight: bold;
 transition: all 250ms ease;
 min-height: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 .linklogo a{
     text-decoration: none; 
     color: #232323;
 }
-.linklogo p {
-    position: relative;
+
+.linklogo span{
+    display: block;
+}
+.linklogo i{
     margin :0;
-    padding: 5px 10px;
+    font-size: 18px;
+    padding: 5px 7px;
     border: 2px solid #232323;
     border-radius: 50%;
     display: inline-block;
     background: #fff;
 }
-.linklogo span{
-    display: block;
-}
-.linklogo p:hover{
+.linklogo i:hover{
     background: #232323;
     color:white;
+}
+.linklogo div{
+    margin:5px;
 }

@@ -10,6 +10,7 @@ class Addform extends React.Component {
             email: '',
             jobtitle: '',
             linkedin: '',
+            insta: '',
             image: '',
         }
         this.formref = null;
@@ -35,7 +36,9 @@ class Addform extends React.Component {
     onimageChange = (event) => {
         this.setState({ image: event.target.value })
     }
-
+    oninstaChange = (event) => {
+        this.setState({ insta: event.target.value })
+    }
     onsubmitChange = (event) => {
         console.log(this.state);
         if (this.validate()) {
@@ -46,7 +49,8 @@ class Addform extends React.Component {
                     name: this.state.name,
                     jobtitle: this.state.jobtitle,
                     linkedin: this.state.linkedin,
-                    image: this.state.image
+                    image: this.state.image,
+                    insta: this.state.insta
                 }),
                 headers: { 'Content-Type': 'application/json' }
             }).then(res => res.json())
@@ -91,6 +95,10 @@ class Addform extends React.Component {
                             <tr>
                                 <td>Linked-in URL : </td>
                                 <td><input onChange={this.onLinkedinChange} className="textfields" type="url" placeholder="Enter your URl" name="linkedin" /></td>
+                            </tr>
+                            <tr>
+                                <td>Instagram  Username: </td>
+                                <td><input onChange={this.oninstaChange} className="textfields" type="text" placeholder="Enter your Insta UserName" name="insta" /></td>
                             </tr>
                             <tr>
                                 <td>Image : </td>

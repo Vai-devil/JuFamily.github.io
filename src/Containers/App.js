@@ -21,13 +21,8 @@ class App extends Component {
       method: 'get',
       headers: {},
     }).then(Response => {
-      Response.text();
-      console.log(Response.data());
+      console.log(Response.json());
     })
-      .then(data => {
-        // this.setState({ memlist: JSON.parse(data) });
-        return (console.log(this.state));
-      })
   }
 
   onfamilyclick = (route) => {

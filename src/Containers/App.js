@@ -25,7 +25,7 @@ class App extends Component {
       console.log(Response);
     })
       .then(data => {
-        this.setState({ memlist: JSON.parse(data) });
+        // this.setState({ memlist: JSON.parse(data) });
         return (console.log(this.state));
       })
   }

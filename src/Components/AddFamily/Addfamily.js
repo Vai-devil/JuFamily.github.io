@@ -52,6 +52,7 @@ class Addform extends React.Component {
                     image: this.state.image
                 })
             })
+                .then(alert("Added"))
             this.props.onfamilyclick('about');
         }
         else {

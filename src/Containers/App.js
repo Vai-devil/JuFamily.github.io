@@ -18,7 +18,7 @@ class App extends Component {
 
   onloadfetch = (event) => {
 
-    fetch('https://git.heroku.com/arcane-brook-61004.git/family').then(Response => { Response.text() })
+    fetch('https://arcane-brook-61004.herokuapp.com/family').then(Response => { Response.text() })
       .then(data => {
         this.setState({ memlist: JSON.parse(data) });
         return (console.log("hello"));

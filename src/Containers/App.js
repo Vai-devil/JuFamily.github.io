@@ -20,14 +20,12 @@ class App extends Component {
     fetch('https://arcane-brook-61004.herokuapp.com/family', {
       method: 'get',
       headers: {},
-    }).then(Response => {
-      Response.json()
-    }).then(member => {
-      this.setState({ memlist: JSON.parse(member) })
-    });
-    console.log(this.state);
+    }).then(Response => { return Response.text() })
+      .then(data => {
+        this.setState({ memlist: JSON.parse(data) });
+        return (console.log("hello"));
+      })
   }
-
 
   onfamilyclick = (route) => {
     this.setState({ route: route });

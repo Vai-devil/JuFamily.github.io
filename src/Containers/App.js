@@ -21,13 +21,14 @@ class App extends Component {
       method: 'get',
       headers: {},
     }).then(Response => {
-      this.setState({ memlist: Response.json() })
-        .then(member => {
-          this.setState({ memlist: member })
-        });
-      console.log(this.state);
+      Response.json()
     })
+      .then(member => {
+        this.setState({ memlist: member })
+      });
+    console.log(this.state);
   }
+
 
   onfamilyclick = (route) => {
     this.setState({ route: route });

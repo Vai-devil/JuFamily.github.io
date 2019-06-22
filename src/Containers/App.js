@@ -16,19 +16,24 @@ class App extends Component {
     }
   }
 
-  onloadfetch = (event) => {
-
-    fetch('https://arcane-brook-61004.herokuapp.com/family').then(Response => { Response.text() })
+  onloadfetch = () => {
+    fetch('https://arcane-brook-61004.herokuapp.com/family', {
+      method: 'get',
+      headers: { 'Content-Type': 'application/json' },
+    }).then(Response => {
+      Response.text();
+      console.log(Response);
+    })
       .then(data => {
         this.setState({ memlist: JSON.parse(data) });
         return (console.log("hello"));
-      });
+      })
 
   }
 
   onfamilyclick = (route) => {
     this.setState({ route: route });
-    console.log(this.state);
+    this.onloadfetch();
   }
   onSearchChange = (event) => {
     this.setState({ searchfield: event.target.value })

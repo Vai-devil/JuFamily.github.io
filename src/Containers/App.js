@@ -25,10 +25,9 @@ class App extends Component {
       console.log(Response);
     })
       .then(data => {
-        this.setState({ memlist: JSON.parse(data) });
-        return (console.log("hello"));
+        // this.setState({ memlist: JSON.parse(data) });
+        return (console.log("hello", data));
       })
-
   }
 
   onfamilyclick = (route) => {
